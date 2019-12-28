@@ -16,9 +16,15 @@ pyd.py nome/nome2
 ```
 pyd.py edit nome
 ```
+```
+pyd.py edit nome/nome2
+```
 
 ## Upload
 
 ```
 pyd.py send:caminho/do/arquivo.txt nome
+```
+```
+pyd.py send:caminho/do/arquivo.txt nome/nome2
 ```
