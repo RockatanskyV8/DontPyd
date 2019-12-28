@@ -1,7 +1,7 @@
-#DontPyd
+# DontPyd
 Leitura e edição de textos do dontpad para o terminal linux
 
-##Leitura
+## Leitura
 
 ```
 pyd.py nome
@@ -11,13 +11,13 @@ pyd.py nome
 pyd.py nome/nome2
 ```
 
-##Edição
+## Edição
 
 ```
 pyd.py edit nome
 ```
 
-##Upload
+## Upload
 
 ```
 pyd.py send:caminho/do/arquivo.txt nome
