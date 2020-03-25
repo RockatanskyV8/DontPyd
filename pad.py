@@ -14,9 +14,8 @@ headers_post = { 'Content-type':'application/x-www-form-urlencoded;charset=UTF-8
 source = requests.get(link).text
 soup = BeautifulSoup(source, 'lxml')
 
-if args[1] == 'edit':
-
-    file = open(path[-1], 'w')
+def edit(content):
+    file = open(content, 'w')
     file.write(soup.find('textarea', {"id": "text"}).text)
     file.close()
 
@@ -29,10 +28,10 @@ if args[1] == 'edit':
 
     file.close()
 
-    os.remove(path[-1])
+    os.remove(content)
 
-elif 'send:' in args[1]:
-    sndFile = (args[1]).split(':')[1]
+def send(content):
+    sndFile = (content).split(':')[1]
 
     file = open(sndFile, 'r')
     raw  = file.read()
@@ -41,6 +40,12 @@ elif 'send:' in args[1]:
 
     file.close()
 
-else:
+options = args[1].split(":")[0] 
 
+if options == 'edit':
+    edit( path[-1] )
+elif options == 'send':
+    send( args[1] )
+else :
     print(soup.find('textarea', {"id": "text"}).text)
+
